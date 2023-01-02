@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  Qadry_job:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: exit 1
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
+
+workflows:
+  Qadry_workflow:
+    jobs:
+      - Qadry_job
